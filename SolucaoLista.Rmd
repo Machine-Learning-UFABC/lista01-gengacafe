@@ -115,6 +115,29 @@ Resposta: Grupos de documentos.
 
 ## Exercício 02
 
+A "maldição da dimensionalidade" é um termo usado para descrever os desafios e problemas que surgem ao trabalhar com dados em espaços de alta dimensão.
+Conforme o número de dimensão dos dados aumenta, o volume do espaço amostral cresce EXPONENCIALMENTE, o que pode levar a uma série de dificuldades:
+
+- Esparsidade dos Dados: Os dados tendem a se tornar cada vez mais esparsos. Isso significa que a distância média entre os pontos aumenta, e a densidade dos dados diminui, tornando difícil identificar padrões ou relações significativas.
+
+- Aumento da Complexidade Computacional: Algoritmos de aprendizado de máquina e técnicas de análise de dados se tornam mais caros à medida que o número de dimensões cresce. Exigindo tempos de processamento mais longos e a necessidade de mais recursos computacionais.
+
+- Overfitting: Em modelos de aprendizado de máquina, o aumento do número de dimensões pode levar ao overfitting, onde o modelo se ajusta muito bem aos dados de treinamento, mas performa mal em dados novos e não vistos.
+
+- Distâncias entre Pontos: Em espaços de alta dimensão, a noção de distância entre pontos pode se tornar menos útil. Todas as distâncias entre pares de pontos tendem a se tornar semelhantes, o que pode afetar negativamente algoritmos que dependem de medidas de distância, como k-vizinhos mais próximos (k-NN).
+
+Para ilustrar um destes problemas (esparsidade de dados), um bom exemplo seria uma trilha:
+
+Suponhamos que sua intenção é saber aproximadamente por quais pontos uma trilha passa.
+Se esta trilha tem mais ou menos 50 metros e você tem vinte e cinco sensores distribuidos uniformemente relatando em que ponto estão, vai ter uma ideia boa de sua trajetória, uma vez que o espaço contiínuo máximo desconhecido vai ser de 2 metros.
+No entanto, se esta trilha tiver 15 quilômetros, haverão trechos desconhecidos que se estendem por centenas de metros já que agora será uma distância de 600 metros entre cada um dos sensores.
+Assim, e usando essa analogia para explicar um dos ônus da "maldição", quanto maior a trilha maior a necessidade de mais sensores para que se mantenha a precisão e cobertura deste caminho.
+
+# Fontes: 
+
+- https://www.youtube.com/watch?v=QZ0DtNFdDko
+- https://proceedings.neurips.cc/paper_files/paper/2018/file/b534ba68236ba543ae44b22bd110a1d6-Paper.pdf
+- https://medium.com/data-hackers/maldição-da-dimensionalidade-655e4342d64
 
 ## Exercício 03
 
