@@ -1,10 +1,10 @@
 ---
 title: "Solução Lista 01"
 author: |
-        | Nome: Fulano de Tal
+        | Nome: João Pedro Genga Carneiro
         | E-mail: fdt@aluno.ufabc.edu.br
-        | Nome: Fulano de Tal
-        | E-mail: fdt@aluno.ufabc.edu.br
+        | Nome: José Roberto de Oliveira
+        | E-mail: jose.r@aluno.ufabc.edu.br
         | (Não é preciso informar os RAs)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
@@ -19,6 +19,10 @@ knitr::opts_chunk$set(echo = T,
                       warning=FALSE,
                       message=FALSE)
 options(width =70)
+
+library(tibble)
+library(dplyr)
+library(tidyverse)
 ```
 
 ## Exercício 01
@@ -29,5 +33,82 @@ options(width =70)
 
 ## Exercício 03
 
+``` {r}
+
+knn_eucledean <- function(k, x, D) {
+  D %>%
+    mutate(dist = (x[1] - x_1)^2 + (x[2] - x_2)^2) %>%
+    arrange(dist) %>%
+    head(k) %>%
+    count(y, sort = TRUE) %>%
+    slice(1) %>%
+    pull(y)
+}
+
+library(tibble)
+
+set.seed(42)
+D <- tibble(
+  x_1 = rnorm(100, 1, 1),
+  x_2 = rnorm(100, -1, 2),
+  y = factor(sample(c("one", "two", "three"), 100, replace = TRUE))
+)
+
+head(D)
+```
+``` {r}
+k <- 10
+
+
+v1 <- c(1, 2)
+knn_eucledean(k, v1, D)
+
+v2 <- c(2, 1)
+knn_eucledean(k, v2, D)
+
+v3 <- c(0, 1)
+knn_eucledean(k, v3, D)
+
+v4 <- c(-2, -3)
+knn_eucledean(k, v4, D)
+```
 
 ## Exercício 04
+
+``` {r}
+data("iris") # Carrega o banco no ambiente global
+
+iris <- as_tibble(iris) %>% # Converte para a dataframe tibble
+  
+select(Petal.Length,Sepal.Length,Species) %>% # Seleciona colunas da dataframe
+  
+rename( x_1 = Petal.Length, x_2 = Sepal.Length, y = Species) # Renomeia as colunas
+
+head(iris)
+```
+```{r}
+l_iris <- as.list(iris)
+
+accuracy <- function(k) {
+  predictions <- pmap_lgl(l_iris, function(x_1, x_2, y) {
+  predicted <- knn_eucledean(k, c(x_1, x_2), iris)
+    return(predicted == y)
+  })
+  
+  correct_predictions <- sum(predictions)
+  total_predictions <- length(predictions)
+  
+  accuracy <- (correct_predictions / total_predictions) * 100
+  return(list(correct_predictions = correct_predictions, total_predictions = total_predictions, accuracy = accuracy))
+}
+
+
+accuracy_k10 <- accuracy(10)
+accuracy_k1 <- accuracy(1)
+
+cat("Total de acertos para k = 10:", accuracy_k10$correct_predictions, "de", accuracy_k10$total_predictions ,"ocorrencias \n")
+cat("Acuracia para k = 10:", accuracy_k10$accuracy, "%\n")
+
+cat("Total de acertos para k = 1:", accuracy_k1$correct_predictions, "de", accuracy_k1$total_predictions ,"ocorrencias \n")
+cat("Acuracia para k = 1:", accuracy_k1$accuracy, "%\n")
+```
