@@ -10,6 +10,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = T,
                       fig.align='center',
@@ -33,56 +34,57 @@ a) Problema de Classificação
 Em problemas de classificação, o objetivo é prever a categoria de um certo dado fornecido com base em suas características. 
 O algoritmo aprende a mapear as entradas (vetores de características) usando as informações passadas para eventualmente classificar esses dados nas saídas (rótulos).
 
-Aplicações Possíveis:
+## Aplicações Possíveis:
 
-# Diagnóstico Médico:
+### Diagnóstico Médico:
 
-Descrição: Classificar pacientes como tendo ou não uma determinada doença com base em exames médicos.
+- Descrição: Classificar pacientes como tendo ou não uma determinada doença com base em exames médicos.
 
-Vetores de Características: Resultados de exames (por exemplo níveis de glicose, pressão arterial, idade, peso).
+- Vetores de Características: Resultados de exames (por exemplo níveis de glicose, pressão arterial, idade, peso).
 
-Rótulos: Diagnóstico positivo (1) ou negativo (0).
+- Rótulos: Diagnóstico positivo (1) ou negativo (0).
 
-# Filtro de Spam:
+### Filtro de Spam:
 
-Descrição: Classificar e-mails como spam ou não spam.
+- Descrição: Classificar e-mails como spam ou não spam.
 
-Vetores de Características: Frequência de palavras específicas, presença de links, endereço de e-mail.
+- Vetores de Características: Frequência de palavras específicas, presença de links, endereço de e-mail.
 
-Rótulos: Spam (1) ou não spam (0).
+- Rótulos: Spam (1) ou não spam (0).
 
 ```{r, out.width="50%"}
-knitr::include_graphics("/image.png")
+knitr::include_graphics("./image.png")
+```
 
 b) Problema de Regressão
 Em problemas de regressão, o objetivo é prever (portanto são usados em modelos preditivos) um valor contínuo com base em variáveis das quais tal valor é dependente, ou seja, costuma ser usado para previsão de tendências.
 O algoritmo aprende a mapear as entradas (vetores de características) para definir as saídas (valores contínuos). 
 
-Aplicações Possíveis:
+## Aplicações Possíveis:
 
-# Previsão de Preços de Imóveis:
+### Previsão de Preços de Imóveis:
 
-Descrição: Prever o preço de uma casa com base em suas características.
+- Descrição: Prever o preço de uma casa com base em suas características.
 
-Vetores de Características: Tamanho da casa, número de quartos, localização, número de vagas.
+- Vetores de Características: Tamanho da casa, número de quartos, localização, número de vagas.
 
-Resposta: Preço do imóvel (veja, é um valor contínuo).
+- Resposta: Preço do imóvel (veja, é um valor contínuo).
 
-# Previsão de Temperatura: 
+### Previsão de Temperatura: 
 
-Descrição: Prever a temperatura em uma determinada localização e horário.
+- Descrição: Prever a temperatura em uma determinada localização e horário.
 
-Vetores de Características: Dados meteorológicos (por exemplo pressão atmosférica, umidade, velocidade do vento).
+- Vetores de Características: Dados meteorológicos (por exemplo pressão atmosférica, umidade, velocidade do vento).
 
-Resposta: Temperatura.
+- Resposta: Temperatura.
 
-# Previsão de Demanda:
+### Previsão de Demanda:
 
-Descrição: Prever a demanda por um produto em um determinado período.
+- Descrição: Prever a demanda por um produto em um determinado período.
 
-Vetores de Características: Histórico de vendas, preço do produto, época do ano, menções em redes sociais.
+- Vetores de Características: Histórico de vendas, preço do produto, época do ano, menções em redes sociais.
 
-Resposta: Intensidade da demanda.
+- Resposta: Intensidade da demanda.
 
 c) Problema de Agrupamento (Clustering)
 
@@ -91,27 +93,28 @@ O algoritmo aprende a mapear as entradas (vetores de características) para iden
 
 Aplicações Possíveis:
 
-# Segmentação de Produtos:
+### Segmentação de Produtos:
 
-Descrição: Agrupar produtos com base em comportamentos de compra (por exemplo lâmina de barbear e creme de barbear).
+- Descrição: Agrupar produtos com base em comportamentos de compra (por exemplo lâmina de barbear e creme de barbear).
 
-Vetores de Características: Histórico de compras, produtos comprados juntos, produtos no carrinho, função do produto.
+- Vetores de Características: Histórico de compras, produtos comprados juntos, produtos no carrinho, função do produto.
 
-Resposta: Grupos de produtos.
+- Resposta: Grupos de produtos.
 
-# Organização de Documentos:
+### Organização de Documentos:
 
-Descrição: Agrupar documentos semelhantes para facilitar a busca e organização.
+- Descrição: Agrupar documentos semelhantes para facilitar a busca e organização.
 
-Vetores de Características: Frequência de palavras, tópicos, autoria.
+- Vetores de Características: Frequência de palavras, tópicos, autoria.
 
-Resposta: Grupos de documentos.
+- Resposta: Grupos de documentos.
 
-# Fontes:
+### Fontes:
 
 - https://www.datacamp.com/blog/classification-machine-learning
 - https://www.seldon.io/machine-learning-regression-explained
 - https://www.sciencedirect.com/topics/engineering/clustering-problem
+
 
 ## Exercício 02
 
