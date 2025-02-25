@@ -1,8 +1,8 @@
 ---
 title: "Solução Lista 01"
 author: |
-        | Nome: Fulano de Tal
-        | E-mail: fdt@aluno.ufabc.edu.br
+        | Nome: João Pedro Genga Carneiro
+        | E-mail: joao.genga@aluno.ufabc.edu.br
         | Nome: Fulano de Tal
         | E-mail: fdt@aluno.ufabc.edu.br
         | (Não é preciso informar os RAs)
@@ -23,6 +23,91 @@ options(width =70)
 
 ## Exercício 01
 
+
+a) Problema de Classificação
+
+Em problemas de classificação, o objetivo é prever a categoria de um certo dado fornecido com base em suas características. 
+O algoritmo aprende a mapear as entradas (vetores de características) usando as informações passadas para eventualmente classificar esses dados nas saídas (rótulos).
+
+Aplicações Possíveis:
+
+# Diagnóstico Médico:
+
+Descrição: Classificar pacientes como tendo ou não uma determinada doença com base em exames médicos.
+
+Vetores de Características: Resultados de exames (por exemplo níveis de glicose, pressão arterial, idade, peso).
+
+Rótulos: Diagnóstico positivo (1) ou negativo (0).
+
+# Filtro de Spam:
+
+Descrição: Classificar e-mails como spam ou não spam.
+
+Vetores de Características: Frequência de palavras específicas, presença de links, endereço de e-mail.
+
+Rótulos: Spam (1) ou não spam (0).
+
+```{r, out.width="50%"}
+knitr::include_graphics("/image.png")
+
+b) Problema de Regressão
+Em problemas de regressão, o objetivo é prever (portanto são usados em modelos preditivos) um valor contínuo com base em variáveis das quais tal valor é dependente, ou seja, costuma ser usado para previsão de tendências.
+O algoritmo aprende a mapear as entradas (vetores de características) para definir as saídas (valores contínuos). 
+
+Aplicações Possíveis:
+
+# Previsão de Preços de Imóveis:
+
+Descrição: Prever o preço de uma casa com base em suas características.
+
+Vetores de Características: Tamanho da casa, número de quartos, localização, número de vagas.
+
+Resposta: Preço do imóvel (veja, é um valor contínuo).
+
+# Previsão de Temperatura: 
+
+Descrição: Prever a temperatura em uma determinada localização e horário.
+
+Vetores de Características: Dados meteorológicos (por exemplo pressão atmosférica, umidade, velocidade do vento).
+
+Resposta: Temperatura.
+
+# Previsão de Demanda:
+
+Descrição: Prever a demanda por um produto em um determinado período.
+
+Vetores de Características: Histórico de vendas, preço do produto, época do ano, menções em redes sociais.
+
+Resposta: Intensidade da demanda.
+
+c) Problema de Agrupamento (Clustering)
+
+Em problemas de agrupamento, o objetivo é agrupar dados semelhantes em clusters sem a necessidade de rótulos pré-definidos.
+O algoritmo aprende a mapear as entradas (vetores de características) para identificar padrões de dados.
+
+Aplicações Possíveis:
+
+# Segmentação de Produtos:
+
+Descrição: Agrupar produtos com base em comportamentos de compra (por exemplo lâmina de barbear e creme de barbear).
+
+Vetores de Características: Histórico de compras, produtos comprados juntos, produtos no carrinho, função do produto.
+
+Resposta: Grupos de produtos.
+
+# Organização de Documentos:
+
+Descrição: Agrupar documentos semelhantes para facilitar a busca e organização.
+
+Vetores de Características: Frequência de palavras, tópicos, autoria.
+
+Resposta: Grupos de documentos.
+
+# Fontes:
+
+- https://www.datacamp.com/blog/classification-machine-learning
+- https://www.seldon.io/machine-learning-regression-explained
+- https://www.sciencedirect.com/topics/engineering/clustering-problem
 
 ## Exercício 02
 
